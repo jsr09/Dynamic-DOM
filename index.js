@@ -2,10 +2,18 @@ class Bookmark {
     constructor (name, link){
     this.name = name;
     this.link = link;
-
-}  render(){
-
-}
+    }  
+    render(){
+        let bookmark = document.createElement('li')
+        bookmark.classList.add("bookmarks")
+        list.append(bookmark)
+        let bookmarkName = document.createElement('p')
+        bookmarkName.innerHTML = this.name
+        let bookmarkLink = document.createElement('p')
+        bookmarkLink.innerHTML = this.link
+        bookmark.append(bookmarkName, bookmarkLink)
+        return bookmark
+    }
 }
 // console.log(newBook)
 
@@ -19,8 +27,8 @@ function getVal(){
     let name = document.getElementsByClassName('bookmarkName')[0].value;
     let link  = document.getElementsByClassName('bookmarkLink')[0].value;
     const newBook = new Bookmark(name, link);
-    newBook.render();
-console.log(newBook);
+    newBook.render()
+    console.log(newBook);
     
 }
 
